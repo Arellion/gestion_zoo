@@ -34,8 +34,8 @@ $employe = $stmt->fetch(PDO::FETCH_ASSOC);
                             </div>
                         </div>
                         <div class="card-footer">
-                            <input type="hidden" value="<?$employe['id_employe']?>">
-                            <button type="submit" class="btn btn-primary btn-sm">Ajouter</button>
+                            <input type="hidden" name="id" value="<?=$employe['id_employe']?>">
+                            <button type="submit" class="btn btn-primary btn-sm">Modifié</button>
                         </div>
                     </div>
                 </form>
