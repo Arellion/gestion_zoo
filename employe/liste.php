@@ -38,7 +38,14 @@ require_once "../header.php";
                     <td><?= $employe['nom_emp']; ?></td>
                     <td><?= $employe['prenom_emp']; ?></td>
                     <td><?= $employe['poste_emp']; ?></td>
-                    <td><a class="link-primary" href="<?=SITE_URL ?>/employe/update.php?id=<?=$employe['id_employe']?>"><i class="fa-solid fa-pencil"></i></a> <a href="<?=SITE_URL ?>/employe/result-delete.php?id=<?=$employe['id_employe']?>" class="link-danger" onclick="return confirm('Etes-vous sûr de vouloir supprimer l\'employé?')"><i class="fa-solid fa-trash-alt"></i></td></a>
+                    <td>
+                        <a class="link-primary" href="<?=SITE_URL ?>/employe/update.php?id=<?=$employe['id_employe']?>">
+                            <i class="fa-solid fa-pencil"></i>
+                        </a>
+                        <a href="<?=SITE_URL ?>/employe/result-delete.php?id=<?=$employe['id_employe']?>" class="link-danger" onclick="return confirm('Etes-vous sûr de vouloir supprimer l\'employé?')">
+                            <i class="fa-solid fa-trash-alt"></i>
+                        </a>
+                    </td>
                 </tr>
             <?php
             endforeach;
