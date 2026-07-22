@@ -35,7 +35,7 @@
                                     <a class="nav-link active" aria-current="page" href="<?= SITE_URL ?>">Accueil</a>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="<?= SITE_URL ?>" role="button"
+                                    <a class="nav-link dropdown-toggle" href="#" role="button"
                                        data-bs-toggle="dropdown" aria-expanded="false">
                                         Employé
                                     </a>
@@ -44,6 +44,19 @@
                                                 employés</a></li>
                                         <li><a class="dropdown-item" href="<?= SITE_URL ?>/employe/create.php">Ajouter
                                                 des employés</a></li>
+
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                                       data-bs-toggle="dropdown" aria-expanded="false">
+                                        Menace
+                                    </a>
+                                    <ul class="dropdown-menu shadow">
+                                        <li><a class="dropdown-item" href="<?= SITE_URL ?>/menace/liste.php">Liste des
+                                                menace</a></li>
+                                        <li><a class="dropdown-item" href="<?= SITE_URL ?>/menace/create-update.php">Ajouter
+                                                des menace</a></li>
 
                                     </ul>
                                 </li>
