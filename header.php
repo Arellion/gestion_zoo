@@ -72,6 +72,32 @@
 
                                     </ul>
                                 </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                                       data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa-solid fa-skull"></i> Famille
+                                    </a>
+                                    <ul class="dropdown-menu shadow">
+                                        <li><a class="dropdown-item" href="<?= SITE_URL ?>/famille/liste.php">Liste des
+                                                familles</a></li>
+                                        <li><a class="dropdown-item" href="<?= SITE_URL ?>/famille/create-update.php">Ajouter
+                                                des familles</a></li>
+
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                                       data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa-solid fa-skull"></i> Geographie
+                                    </a>
+                                    <ul class="dropdown-menu shadow">
+                                        <li><a class="dropdown-item" href="<?= SITE_URL ?>/geographie/liste.php">Liste des
+                                                geographies</a></li>
+                                        <li><a class="dropdown-item" href="<?= SITE_URL ?>/geographie/create-update.php">Ajouter
+                                                des geographies</a></li>
+
+                                    </ul>
+                                </li>
                         </div>
                     </div>
                 </nav>
