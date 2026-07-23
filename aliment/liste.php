@@ -3,19 +3,25 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1>Liste des aliments</h1>
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <a href="<?= SITE_URL ?>/aliment/create-update.php" class="btn btn-primary btn-sm me-1 mb-2">
-                <i class="fa-solid fa-plus"></i>Ajouter un aliment
-            </a>
+
         </div>
     </div>
     <div class="row">
         <div class="col">
             <div class="card">
+                <div class="card-header bg-success-subtle  mb-2 d-flex justify-content-center">
+                    <h1>Liste des aliments</h1>
+                </div>
+                <div class="row">
+                    <div class="d-flex justify-content-end">
+                        <a href="<?= SITE_URL ?>/aliment/create-update.php" class="btn btn-primary btn-sm me-3">
+                            <i class="fa-solid fa-plus me-2"></i>Ajouter un aliment
+                        </a>
+                    </div>
                 <div class="card-body">
                     <table class="table table-hover">
                         <thead>
@@ -41,13 +47,17 @@
                                     <form action="<?= SITE_URL ?>/aliment/result.php" method="post"
                                           onsubmit="return confirm('Ete vous sûre de vouloir supprimer cette aliment? ')"
                                           class="d-inline">
-                                        <input type="hidden" name="id_aliment" id="id_aliment" value="<?= $aliment['id_aliment']?>">
-                                        <button type="submit" class="btn btn-danger btn-sm me-1">
+                                        <input type="hidden" name="id_aliment" id="id_aliment"
+                                               value="<?= $aliment['id_aliment'] ?>">
+                                        <button type="submit" class="btn btn-danger btn-sm me-1" name="action"
+                                                value="delete">
                                             <i class="fa fa-solid fa-trash-alt"></i>
                                         </button>
                                     </form>
-                                    <form action="<?=SITE_URL?>/aliment/create-update.php" method="post" class="d-inline">
-                                        <input type="hidden" name="id_aliment" id="id_aliment" value="<?=$aliment['id_aliment']?>">
+                                    <form action="<?= SITE_URL ?>/aliment/create-update.php" method="post"
+                                          class="d-inline">
+                                        <input type="hidden" name="id_aliment" id="id_aliment"
+                                               value="<?= $aliment['id_aliment'] ?>">
                                         <button type="submit" class="btn btn-primary btn-sm me-1">
                                             <i class="fa fa-solid fa-pen"
                                         </button>
@@ -57,6 +67,7 @@
                         <?php endforeach; ?>
                         </tbody>
                     </table>
+                </div>
                 </div>
             </div>
         </div>
