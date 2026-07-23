@@ -13,13 +13,13 @@ endif;
             <div class="col">
                 <form method="post" action="<?= SITE_URL ?>/menace/result.php">
                     <div class="card">
-                        <div class="card-header">
+                        <div class="card-header bg-success-subtle  mb-2 d-flex justify-content-center">
                             <!--                            if(isset($menace['id_menace'])) :-->
                             <!--                            echo "Création d'une menace"-->
                             <!--                            else :-->
                             <!--                            echo "Création d'une menace"-->
                             <!--                            Pareil que-->
-                            <?= isset($menace['id_menace']) ? 'Modification de la menace' : 'Creation de la menace' ?>
+                            <?= isset($menace['id_menace']) ? '<h1 class="fs-3">Modification de la menace</h1>' : '<h1 class="fs-3">Creation de la menace</h1>' ?>
                         </div>
                         <div class="card-body">
                             <div class="form-floating">
@@ -29,7 +29,7 @@ endif;
                                 <label for="floatingLibelle">Libelle</label>
                             </div>
                         </div>
-                        <div class="card-footer d-flex justify-content-end">
+                        <div class="card-footer bg-success-subtle d-flex justify-content-end">
                             <?php if (isset($menace['id_menace'])) : ?>
                             <input type="hidden" name="id" value="<?= $menace['id_menace']; ?>">
                                 <button type="submit" name="action" value="update" class="btn btn-primary btn-sm">Modifié la menace</button>

@@ -21,7 +21,7 @@
 </head>
 <header class="mb-3">
                 <!---TODO: LE MENU--->
-                <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+                <nav class="navbar navbar-expand-lg bg-success-subtle shadow p-3">
                     <div class="container">
                         <a class="navbar-brand" href="<?= SITE_URL ?>">Zoologik</a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -32,12 +32,12 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="<?= SITE_URL ?>">Accueil</a>
+                                    <a class="nav-link active" aria-current="page" href="<?= SITE_URL ?>"> <i class="fa-solid fa-house"></i> Accueil</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button"
                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        Employé
+                                        <i class="fa-solid fa-people-group"></i> Employé
                                     </a>
                                     <ul class="dropdown-menu shadow">
                                         <li><a class="dropdown-item" href="<?= SITE_URL ?>/employe/liste.php">Liste des
@@ -50,13 +50,25 @@
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button"
                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        Menace
+                                        <i class="fa-solid fa-skull"></i> Menace
                                     </a>
                                     <ul class="dropdown-menu shadow">
                                         <li><a class="dropdown-item" href="<?= SITE_URL ?>/menace/liste.php">Liste des
                                                 menace</a></li>
                                         <li><a class="dropdown-item" href="<?= SITE_URL ?>/menace/create-update.php">Ajouter
                                                 des menace</a></li>
+
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                                       data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa-solid fa-utensils"></i> Aliment
+                                    </a>
+                                    <ul class="dropdown-menu shadow">
+                                        <li><a class="dropdown-item" href="<?= SITE_URL ?>/aliment/liste.php">Liste des aliments</a></li>
+                                        <li><a class="dropdown-item" href="<?= SITE_URL ?>/aliment/create-update.php">Ajouter
+                                                des aliments</a></li>
 
                                     </ul>
                                 </li>

@@ -4,19 +4,20 @@ require_once "../header.php";
 <div class="container">
     <div class="row mb-3">
         <div class="col">
-            <h1>Liste des menaces</h1>
         </div>
     </div>
-    <div class="row mb-3">
-        <div class="col">
-            <a href="<?= SITE_URL ?>/menace/create-update.php" class="btn btn-sm btn-primary">
-                <i class="fa-solid fa-circle-plus"></i>Ajouter Menace
-            </a>
-        </div>
-    </div>
+
     <div class="row">
         <div class="col">
             <div class="card">
+                <div class="card-header bg-success-subtle  mb-2 d-flex justify-content-center">
+                    <h1>Liste des menaces</h1>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <a href="<?= SITE_URL ?>/menace/create-update.php" class="btn btn-sm btn-primary me-3">
+                        <i class="fa-solid fa-circle-plus"></i>Ajouter Menace
+                    </a>
+                </div>
                 <div class="card-body">
                     <table class="table table-hover">
                         <thead>

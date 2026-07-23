@@ -37,7 +37,7 @@
                     $stmt->execute($params);
                     echo "<div class='alert alert-success'>$phrase_reussite</div>";
                     }catch (PDOException $e){
-                        echo "<div class='alert alert-success'>$e->getMessage</div>";
+                        echo "<div class='alert alert-success'>" . $e->getMessage . "</div>";
                     }
                 endif;
                 ?>
