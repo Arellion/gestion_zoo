@@ -88,13 +88,35 @@
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button"
                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="fa-solid fa-skull"></i> Geographie
+                                        <i class="fa-solid fa-globe"></i> Geographie
                                     </a>
                                     <ul class="dropdown-menu shadow">
                                         <li><a class="dropdown-item" href="<?= SITE_URL ?>/geographie/liste.php">Liste des
                                                 geographies</a></li>
                                         <li><a class="dropdown-item" href="<?= SITE_URL ?>/geographie/create-update.php">Ajouter
                                                 des geographies</a></li>
+
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                                       data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa-solid fa-flag"></i></i> Zone
+                                    </a>
+                                    <ul class="dropdown-menu shadow">
+                                        <li><a class="dropdown-item" href="<?= SITE_URL ?>/zone/liste.php">Liste des zones</a></li>
+                                        <li><a class="dropdown-item" href="<?= SITE_URL ?>/zone/create-update.php">Ajouter des zones</a></li>
+
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                                       data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa-brands fa-d-and-d"></i></i> animal
+                                    </a>
+                                    <ul class="dropdown-menu shadow">
+                                        <li><a class="dropdown-item" href="<?= SITE_URL ?>/animal/liste.php">Liste des animaux</a></li>
+                                        <li><a class="dropdown-item" href="<?= SITE_URL ?>/animal/create-update.php">Ajouter des animaux</a></li>
 
                                     </ul>
                                 </li>

@@ -1,6 +1,7 @@
 <?php require_once "../header.php";
 $params = "";
 $fonctionne = 1 ;
+print_r($_POST)
 ?>
     <div class="container">
         <div class="row">
@@ -16,7 +17,7 @@ $fonctionne = 1 ;
                         $phrase = 'créer';
                         break;
                     case 'update' :
-                        $sql = ("UPDATE aliment SET id_aliment = :id_aliment ,code_aliment = :code, nom_aliment = :nom, stock_aliment = :stock WHERE id_aliment = :id_aliment");
+                        $sql = ("UPDATE aliment SET code_aliment = :code, nom_aliment = :nom, stock_aliment = :stock WHERE id_aliment = :id_aliment");
                         $params = [
                                 ':id_aliment' => $_POST['id_aliment'],
                                 ':code' => $_POST['code'],
