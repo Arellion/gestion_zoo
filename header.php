@@ -88,7 +88,7 @@
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button"
                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="fa-solid fa-skull"></i> Geographie
+                                        <i class="fa-solid fa-globe"></i> Geographie
                                     </a>
                                     <ul class="dropdown-menu shadow">
                                         <li><a class="dropdown-item" href="<?= SITE_URL ?>/geographie/liste.php">Liste des
@@ -101,7 +101,7 @@
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button"
                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="fa-solid fa-skull"></i> Zone
+                                        <i class="fa-solid fa-flag"></i></i> Zone
                                     </a>
                                     <ul class="dropdown-menu shadow">
                                         <li><a class="dropdown-item" href="<?= SITE_URL ?>/zone/liste.php">Liste des zones</a></li>
@@ -112,7 +112,7 @@
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button"
                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="fa-solid fa-skull"></i> animal
+                                        <i class="fa-brands fa-d-and-d"></i></i> animal
                                     </a>
                                     <ul class="dropdown-menu shadow">
                                         <li><a class="dropdown-item" href="<?= SITE_URL ?>/animal/liste.php">Liste des animaux</a></li>
