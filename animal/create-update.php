@@ -13,7 +13,7 @@ endif;
                 <form action="<?= SITE_URL; ?>/animal/result.php" method="POST">
                     <div class="card">
                         <div class="card-header">
-                            <?= isset($animal['id_animal']) ? 'Modification de la' : 'Création d\'une' ?> animal
+                            <?= isset($animal['id_animal']) ? 'Modification de l\'' : 'Création d\'un' ?> animal
                         </div>
                         <div class="card-body">
                             <div class="form-floating mb-3">
@@ -22,49 +22,53 @@ endif;
                                        required>
                                 <label for="floatingNom">Nom</label>
                             </div>
-
-
-                            <input type="date" class="form-control" id="floatingDateArrive"
-                                   placeholder="Date d'arrivée" name="date_arrive"
-                                   value="<?= isset($animal['date_arrive_animal']) ? $animal['date_arrive_animal'] : ''; ?>"
-                                   required>
-                            <label for="floatingDateArrive">Date d'arrivée</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input type="date" class="form-control" id="floatingDateNaissance"
-                                   placeholder="Date de naissance" name="date_naissance"
-                                   value="<?= isset($animal['date_naissance_animal']) ? $animal['date_naissance_animal'] : ''; ?>"
-                                   required>
-                            <label for="floatingDateNaissance">Date de naissance</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <div class="form-check form-check-inline">
+                            <div class="form-floating mb-3">
+                                <input type="date" class="form-control" id="floatingDateArrive"
+                                       placeholder="Date d'arrivée" name="date_arrive"
+                                       value="<?= isset($animal['date_arrive_animal']) ? $animal['date_arrive_animal'] : null; ?>">
+                                <label for="floatingDateArrive">Date d'arrivée</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="date" class="form-control" id="floatingDateNaissance"
+                                       placeholder="Date de Naissance" name="date_naissance"
+                                       value="<?= $animal['date_naissance_animal'] ? $animal['date_naissance_animal'] : null; ?>">
+                                <label for="floatingDateNaissance">Date de Naissance</label>
+                            </div>
+                            <div class="mb-3 border rounded p-2">
+                                <div class="mb-1">
+                                    <span class="form-label">Sexe de l'animal</span>
+                                </div>
+                                <?php $sexe = $animal['sexe_animal'] ?? 'Indéterminé'; ?>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="sexe" value="M" id="radioM">
-                                    <label class="form-check-input" for="radioM">M</label>
+                                    <input class="form-check-input" type="radio" name="sexe" id="radioM" value="M" <?= $sexe == 'M' ? 'checked' : ''; ?> >
+                                    <label class="form-check-label" for="radioM">Mâle</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="sexe" value="F" id="radioF">
-                                    <label class="form-check-input" for="radioF">F</label>
+                                    <input class="form-check-input" type="radio"  name="sexe" id="radioF" value="F" <?= $sexe == 'F' ? 'checked' : ''; ?>>
+                                    <label class="form-check-label" for="radioF">Femelle</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="sexe" value="Indéterminé"
-                                           id="radioIndeter" checked>
-                                    <label class="form-check-input" for="radioIndeter">Indéterminé</label>
+                                    <input class="form-check-input" type="radio" name="sexe" id="radioIndeter" value="Indéterminé" <?= $sexe == 'Indéterminé' ? 'checked' : ''; ?>>
+                                    <label class="form-check-label" for="radioIndeter">Indéterminé</label>
                                 </div>
-                                <label for="form-label">Commentaire</label>
-                                <textarea class="form-control" id="commentaire" name="commentaire" rows="3"></textarea>
+                            </div>
+                            <div class="mb-3 border rounded p-2">
+                                <label for="commentaire" class="form-label">Commentaire</label>
+                                <textarea class="form-control" id="commentaire" name="commentaire"
+                                          rows="3"><?= $animal['commentaire_animal'] ?? '' ?></textarea>
                             </div>
                             <div class="mb-3">
                                 <select class="form-select" name="id_espece">
                                     <option selected disabled>--- Choisir une espèce ---</option>
                                     <?php
-                                    $stmt = $db->query("SELECT * FROM espece");
-                                    $row_espece = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                                    foreach ($row_espece as $espece) :
+                                    $stmt = $db->query('SELECT * FROM espece');
+                                    $rows_espece = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    foreach ($rows_espece as $espece):
                                         ?>
-                                        <option value="<? $espece['id_espece']; ?>'"><?= $espece['nom_vulgaire_esp'];?></option>
-                                        <?php
+                                        <option value="<?= $espece['id_espece']; ?>" <?= $espece['id_espece'] == $animal['id_espece'] ? 'selected' : '' ?>>
+                                            <?= $espece['nom_vulgaire_esp']; ?>
+                                        </option>
+                                    <?php
                                     endforeach;
                                     ?>
                                 </select>
@@ -73,11 +77,13 @@ endif;
                                 <select class="form-select" name="id_zone">
                                     <option selected disabled>--- Choisir une zone ---</option>
                                     <?php
-                                    $stmt = $db->query("SELECT * FROM zone");
-                                    $row_zone = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                                    foreach ($row_zone as $zone) :
+                                    $stmt = $db->query('SELECT * FROM zone');
+                                    $rows_zone = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    foreach ($rows_zone as $zone):
                                         ?>
-                                        <option value="<? $zone['id_zone']; ?>'"><?= $zone['libelle_zone'];?></option>
+                                        <option value="<?= $zone['id_zone']; ?>" <?= $zone['id_zone'] == $animal['id_zone'] ? 'selected' : '' ?>>
+                                            <?= $zone['libelle_zone']; ?>
+                                        </option>
                                     <?php
                                     endforeach;
                                     ?>

@@ -4,7 +4,7 @@ require_once("../header.php");
     <div class="container">
         <div class="row mb-3">
             <div class="col text-center">
-                <h1>Liste animaux</h1>
+                <h1>Liste des animaux</h1>
             </div>
         </div>
         <div class="row mb-3">
@@ -23,15 +23,13 @@ require_once("../header.php");
                             <tr>
                                 <th>#</th>
                                 <th>Nom</th>
-                                <th>Date d'arrivé</th>
-                                <th>Date de naissance</th>
+                                <th>Date Arrivée</th>
+                                <th>Date Naissance</th>
                                 <th>Sexe</th>
                                 <th>Commentaire</th>
                                 <th>Espèce</th>
-                                <th>Nom Vulgaire</th>
                                 <th>Zone</th>
-                                <th>Action</th>
-
+                                <th>Actions</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -39,7 +37,6 @@ require_once("../header.php");
                             $sql = "SELECT * FROM animal ";
                             $sql .= "INNER JOIN espece ON animal.id_espece = espece.id_espece ";
                             $sql .= "INNER JOIN zone ON animal.id_zone = zone.id_zone ";
-                            echo $sql;
                             $stmt = $db->query($sql);
                             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             foreach($rows as $animal) :
@@ -47,11 +44,10 @@ require_once("../header.php");
                                 <tr>
                                     <td><?= $animal['id_animal']; ?></td>
                                     <td><?= $animal['nom_animal']; ?></td>
-                                    <td><?= date('d/m/y', strtotime($animal['date_arrive_animal'])); ?></td>
-                                    <td><?= date('d/m/y', strtotime($animal['date_naissance_animal'])); ?></td>
+                                    <td><?= date('d/m/Y', strtotime($animal['date_arrive_animal'])); ?></td>
+                                    <td><?= !empty($animal['date_naissance_animal']) ? (new DateTime($animal['date_naissance_animal']))->format('d/m/Y') : '-' ;?> </td>
                                     <td><?= $animal['sexe_animal']; ?></td>
                                     <td><?= $animal['commentaire_animal']; ?></td>
-                                    <td><?= $animal['nom_scientifique_esp']; ?></td>
                                     <td><?= $animal['nom_vulgaire_esp']; ?></td>
                                     <td><?= $animal['libelle_zone']; ?></td>
                                     <td>

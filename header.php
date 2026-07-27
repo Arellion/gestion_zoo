@@ -98,6 +98,28 @@
 
                                     </ul>
                                 </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                                       data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa-solid fa-skull"></i> Zone
+                                    </a>
+                                    <ul class="dropdown-menu shadow">
+                                        <li><a class="dropdown-item" href="<?= SITE_URL ?>/zone/liste.php">Liste des zones</a></li>
+                                        <li><a class="dropdown-item" href="<?= SITE_URL ?>/zone/create-update.php">Ajouter des zones</a></li>
+
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                                       data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa-solid fa-skull"></i> animal
+                                    </a>
+                                    <ul class="dropdown-menu shadow">
+                                        <li><a class="dropdown-item" href="<?= SITE_URL ?>/animal/liste.php">Liste des animaux</a></li>
+                                        <li><a class="dropdown-item" href="<?= SITE_URL ?>/animal/create-update.php">Ajouter des animaux</a></li>
+
+                                    </ul>
+                                </li>
                         </div>
                     </div>
                 </nav>
